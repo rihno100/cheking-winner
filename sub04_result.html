@@ -1,0 +1,106 @@
+<!DOCTYPE>
+<html lang="ko">
+ <head>
+  <title> 여행주산 </title>
+	<meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="문화마케팅연구소">
+  <meta name="Keywords" content="여행주간,제주도,제주">
+  <meta name="Description" content="2018 봄 여행주간 제주 대표프로그램">
+  <link rel="stylesheet" href="css/layout.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript" src="js/common.js"></script>
+  
+ </head>
+
+ <body>
+  <div id="wrap">
+  <div class="rightboxarea">
+	<div class="inner">
+		<div class="closebtn"></div>
+	</div>
+  </div>
+	<div class="container sub sub4 winner-result-ctns">
+		<header>
+			<div class="inner">
+				<div class="logo"><a href="main.html"></a></div>
+				<div class="gnb">
+					<ul>
+						<li><a href="main.html" class="jejutext">메인<br>으로</a></li>
+						<li><a href="sub01.html" class="jejutext">두근두근<br>스냅투어</a></li>
+						<li><a href="sub02.html" class="jejutext">오글오글<br>촬영부스</a></li>
+						<li><a href="sub03.html" class="jejutext">휘둥그레<br>현장미션</a></li>
+						<li><a href="sub04.html" class="jejutext on">제주스레<br>스탬프랠리</a></li>
+					</ul>
+				</div>
+		</header>
+		<section rol="banner" class="topbannerarea">
+			<div class="bg_img"><img src="img/sub4/bg_img.png" alt="" /></div>
+		</section>
+		<section>
+			<div class="contents">
+				<div class="inputarea">
+					<table>
+						<tr>
+							<td>이름 :</td>
+							<td><input id="rname" type="text" placeholder="이름을 입력해주세요."/></td>
+						</tr>
+						<tr>
+							<td>전화번호 :<span>뒷자리(4자리)</span></td>
+							<td><input type="text" id="rnum" onkeyup="chkword(this, 4)" placeholder="뒷자리 4자리를 입력해주세요."/></td>
+						</tr>
+					</table>
+				</div>
+				<div class="winner-result-view-btn"><a></a></div>
+				<div id="rank-area"></div>
+				<p class="winner-text">2018 제주 봄 여행주간<br/>제주스레, 탐(耽:즐길 탐) 나는 스탬프랠리에 참여해주셔서 감사합니다.</p>
+				<p class="winner-bottom-text">2018년 5월 31일 (목) 제출하신 리플릿에 작성된 연락처로 발송 예정입니다. 번호 오류로 인해 발송되지 못한 경우 당첨이 취소될 수 있습니다.</p>
+			</div>
+		</section>
+		<footer>
+			<div class="inner">
+				<p><span>주최ㆍ주관 :</span><a href="http://www.mcst.go.kr/main.jsp" target="_blank"></a><a href="http://kto.visitkorea.or.kr/kor.kto" target="_blank"></a><a href="http://www.jejusi.go.kr/" target="_blank"></a><a href="https://ijto.or.kr/korean/" target="_blank"></a><a href="http://visitjeju.or.kr/" target="_blank"></a></p>
+				<p>문의 : 한국관광공사 제주지사 T.064-735-7322 / 제주 봄 여행주간 운영사무국 T.02-408-9274</p>			
+			</div>
+		</footer>
+  </div>
+	<script type="text/javascript">
+		function chkword(obj, maxByte) {
+	 
+			var strValue = obj.value;
+			var strLen = strValue.length;
+			var totalByte = 0;
+			var len = 0;
+			var oneChar = "";
+			var str2 = "";
+	 
+			for (var i = 0; i < strLen; i++) {
+				oneChar = strValue.charAt(i);
+				if (escape(oneChar).length > 4) {
+					totalByte += 2;
+				} else {
+					totalByte++;
+				}
+	 
+				// 입력한 문자 길이보다 넘치면 잘라내기 위해 저장
+				if (totalByte <= maxByte) {
+					len = i + 1;
+				}
+			}
+	 
+			// 넘어가는 글자는 자른다.
+			if (totalByte > maxByte) {
+				alert(maxByte + "자를 초과 입력 할 수 없습니다.");
+				str2 = strValue.substr(0, len);
+				obj.value = str2;
+				//chkword(obj, 10);
+			}
+			if(isNaN(obj.value)){
+				alert("숫자만 입력해주세요.");
+				str2 = strValue.substr(0, len-1);
+				obj.value = str2;		
+			}
+		}
+	</script>
+ </body>
+</html>
